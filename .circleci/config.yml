@@ -7,7 +7,7 @@ jobs:
         type: string
         default: '2.7.4-browsers'
     docker:
-      - image: cimg/ruby:<< parameters/tag >>
+      - image: cimg/ruby:<< parameters.tag >>
     steps:
       - run:
           name: Check Python
