@@ -19,7 +19,7 @@ jobs:
 workflows:
   main:
     jobs:
-      - check-python:
+      - check-node:
           matrix:
             parameters:
               tag:
