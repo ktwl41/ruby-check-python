@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  check-python:
+  check-node:
     parameters:
       tag:
         type: string
@@ -10,10 +10,11 @@ jobs:
       - image: cimg/ruby:<< parameters.tag >>
     steps:
       - run:
-          name: Check Python
+          name: Check Node
           command: |
-            which python
-            python --version
+            # https://github.com/nodejs/docker-node/issues/1149#issuecomment-552705885
+            which node
+            node -v
 
 workflows:
   main:
@@ -23,4 +24,4 @@ workflows:
             parameters:
               tag:
                 - 2.7.4-browsers
-                - 3.0.2
+                - 3.0.2-browsers
